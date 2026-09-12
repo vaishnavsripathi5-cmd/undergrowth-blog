@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<article class="wrap post-header">
+  <span class="coord">{{ coords or location }}</span>
+  <h1>{{ title }}</h1>
+  <span class="coord">{{ date | readableDate }}</span>
+</article>
+
+{% if image %}
+<div class="wrap">
+  <div class="post-cover"><img src="{{ image }}" alt="{{ title }}"></div>
+</div>
+{% endif %}
+
+<div class="wrap">
+  <div class="post-body">
+    {{ content | safe }}
+    <a href="/" class="back-link">← Back to all entries</a>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "Undergrowth" }} — Undergrowth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a href="/" class="wordmark">UNDER<span>GROWTH</span></a>
+    <nav>
+      <a href="/#entries">Journal</a>
+      <a href="/">Expeditions</a>
+      <a href="/admin/">Field Index</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© {{ year }} Undergrowth</span>
+      <div class="footer-links">
+        <a href="#">RSS</a>
+        <a href="#">Instagram</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

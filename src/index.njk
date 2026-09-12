@@ -1,0 +1,88 @@
+---
+layout: base.njk
+title: Home
+permalink: /index.html
+---
+<section class="hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="500" fill="#1C1712"/>
+      <circle cx="1000" cy="120" r="140" fill="#8B4A3A" opacity="0.35"/>
+      <circle cx="1000" cy="120" r="70" fill="#E8A33D" opacity="0.5"/>
+      <path d="M0 340 Q 250 260 480 320 T 1200 300 L1200 500 L0 500 Z" fill="#2E4A42" opacity="0.55"/>
+      <path d="M0 400 Q 300 330 560 380 T 1200 360 L1200 500 L0 500 Z" fill="#1C1712"/>
+    </svg>
+  </div>
+  <div class="wrap hero-content">
+    <span class="coord">FIELD JOURNAL</span>
+    <h1>Chasing what<br>doesn't wait <em>for you.</em></h1>
+    <p class="lede">Dispatches from the field — written from wherever the last trip left off.</p>
+    <div class="hero-actions">
+      {% if collections.posts.length > 0 %}
+      <a href="{{ collections.posts[0].url }}" class="btn-primary">Read the latest dispatch</a>
+      {% endif %}
+      <a href="/admin/" class="link-quiet">Write a new entry</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div id="entries">
+    <div class="section-head">
+      <h2>Dispatches</h2>
+    </div>
+
+    {% if collections.posts.length == 0 %}
+    <div class="empty-state">
+      No entries yet — <a href="/admin/">write your first one</a> when you're ready.
+    </div>
+    {% else %}
+
+    <article class="featured">
+      <div>
+        <span class="coord">{{ collections.posts[0].data.coords or collections.posts[0].data.location }}</span>
+        <h3><a href="{{ collections.posts[0].url }}">{{ collections.posts[0].data.title }}</a></h3>
+        <p>{{ collections.posts[0].data.excerpt }}</p>
+        <a href="{{ collections.posts[0].url }}" class="link-quiet">Read the full dispatch</a>
+      </div>
+      <div class="featured-art">
+        {% if collections.posts[0].data.image %}
+          <img src="{{ collections.posts[0].data.image }}" alt="{{ collections.posts[0].data.title }}">
+        {% else %}
+          <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="320" fill="#262019"/>
+            <path d="M0 220 L120 100 L210 190 L280 120 L400 230 L400 320 L0 320 Z" fill="#2E4A42"/>
+            <circle cx="330" cy="60" r="34" fill="#E8A33D" opacity="0.85"/>
+          </svg>
+        {% endif %}
+      </div>
+    </article>
+
+    {% if collections.posts.length > 1 %}
+    <div class="entries">
+      {% for post in collections.posts.slice(1) %}
+      <article class="entry">
+        <span class="coord">{{ post.data.coords or post.data.location }}</span>
+        <div class="entry-art">
+          {% if post.data.image %}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+          {% else %}
+            <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="190" fill="#262019"/>
+              <ellipse cx="150" cy="150" rx="180" ry="60" fill="#8B4A3A" opacity="0.4"/>
+              <circle cx="240" cy="45" r="20" fill="#E8A33D" opacity="0.8"/>
+            </svg>
+          {% endif %}
+        </div>
+        <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+        <p>{{ post.data.excerpt }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% endif %}
+  </div>
+
+</div>
