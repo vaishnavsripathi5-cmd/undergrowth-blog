@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Expeditions
+permalink: /expeditions/
+---
+
+<section class="wrap page-section">
+  <div class="section-head">
+    <span class="eyebrow">FIELD EXPLORATIONS</span>
+    <h1>Expeditions</h1>
+    <p>Stories from journeys, habitats, and wildlife explorations.</p>
+  </div>
+
+  <div class="entries">
+    {% for post in collections.posts | reverse %}
+      {% if post.data.type == "Expedition" %}
+        <article class="entry">
+          <span class="eyebrow">
+            {{ post.data.location or "Field Exploration" }}
+          </span>
+
+          <h2>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h2>
+
+          {% if post.data.excerpt %}
+            <p>{{ post.data.excerpt }}</p>
+          {% endif %}
+
+          <a class="link-quiet" href="{{ post.url }}">
+            Read expedition →
+          </a>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
