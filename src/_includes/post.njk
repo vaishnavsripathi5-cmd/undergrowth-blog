@@ -14,8 +14,16 @@ layout: base.njk
 {% endif %}
 
 <div class="wrap">
-  <div class="post-body">
+    <div class="post-body">
     {{ content | safe }}
+
+    {% if gallery %}
+      <div class="post-gallery">
+        {% for photo in gallery %}
+          <img src="{{ photo.image }}" alt="{{ title }}">
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <a href="/" class="back-link">← Back to all entries</a>
   </div>
-</div>
