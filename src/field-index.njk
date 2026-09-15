@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Field Index
+permalink: /field-index/
+---
+
+<section class="wrap page-section">
+  <div class="section-head">
+    <span class="eyebrow">WILDLIFE ARCHIVE</span>
+    <h1>Field Index</h1>
+    <p>Browse wildlife stories and explorations from the field.</p>
+  </div>
+
+  <div class="entries">
+    {% for post in collections.posts | reverse %}
+      <article class="entry">
+        <span class="eyebrow">
+          {{ post.data.type or "Field Story" }}
+          {% if post.data.location %}
+            · {{ post.data.location }}
+          {% endif %}
+        </span>
+
+        <h2>
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
+
+        {% if post.data.excerpt %}
+          <p>{{ post.data.excerpt }}</p>
+        {% endif %}
+
+        <a class="link-quiet" href="{{ post.url }}">
+          Explore entry →
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
