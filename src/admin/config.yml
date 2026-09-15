@@ -2,6 +2,8 @@ backend:
   name: github
   repo: vaishnavsripathi5-cmd/undergrowth-blog
   branch: main
+  base_url: https://decap-oauth-proxy.vaishnavsripathi5.workers.dev
+  auth_endpoint: auth
 
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
