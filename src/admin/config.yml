@@ -20,5 +20,13 @@ collections:
       - { label: "Coordinates (optional, e.g. 34.15° N, 77.57° E)", name: "coords", widget: "string", required: false }
       - { label: "Short excerpt (shown on the homepage)", name: "excerpt", widget: "text" }
       - { label: "Cover photo", name: "image", widget: "image", required: false }
+            - label: "Additional photos (optional)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          label: "Photo"
+          name: "image"
+          widget: "image"
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "Story", name: "body", widget: "markdown" }
