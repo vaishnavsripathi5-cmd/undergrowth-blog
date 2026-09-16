@@ -72,6 +72,47 @@ nav a:hover{ color: var(--bone); }
 }
 .link-quiet{ font-size: 0.9rem; border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--bone-dim); }
 
+/* ---------- about ---------- */
+.about{
+  padding: 60px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.about-content{
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.about-photo{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--rule);
+}
+.about-text h2{
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  margin: 10px 0 16px;
+}
+.about-text p{
+  color: var(--bone-dim);
+  max-width: 54ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 780px){
+  .about-content{
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  .about-text p{
+    margin: 0 auto;
+  }
+}
+
 /* ---------- stats ---------- */
 .stats{
   border-top: 1px solid var(--rule);
