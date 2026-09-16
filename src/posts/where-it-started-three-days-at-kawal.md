@@ -1,5 +1,6 @@
 ---
 title: "Where it started: three days at Kawal"
+type: Journal
 date: 2024-01-25T19:26:00.000+05:30
 location: Kawal Tiger Reserve
 coords: 19.112544, 79.018587
