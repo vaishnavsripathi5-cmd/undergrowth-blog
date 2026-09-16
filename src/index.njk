@@ -25,6 +25,18 @@ permalink: /index.html
     </div>
   </div>
 </section>
+<section class="about">
+  <div class="wrap about-content">
+    {% if about.image %}
+      <img class="about-photo" src="{{ about.image }}" alt="{{ about.heading }}">
+    {% endif %}
+    <div class="about-text">
+      <span class="coord">ABOUT</span>
+      <h2>{{ about.heading }}</h2>
+      <p>{{ about.bio }}</p>
+    </div>
+  </div>
+</section>
 
 <div class="wrap">
 
