@@ -37,4 +37,16 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
 
       - { label: "Story", name: "body", widget: "markdown" }
-           
+
+  - name: "about"
+    label: "About / Who I Am"
+    files:
+      - file: "src/_data/about.json"
+        label: "About Section"
+        name: "about"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+
+          - { label: "Bio", name: "bio", widget: "text" }
+
+          - { label: "Profile Photo", name: "image", widget: "image", required: false }
