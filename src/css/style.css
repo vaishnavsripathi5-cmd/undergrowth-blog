@@ -3,7 +3,7 @@
   --night-2: #262019;
   --amber: #E8A33D;
   --teal: #2E4A42;
-  --rust: #8B4A3A;
+  --rust: #B84A3A;
   --bone: #F2EDE3;
   --bone-dim: rgba(242,237,227,0.62);
   --rule: rgba(242,237,227,0.14);
@@ -38,16 +38,31 @@ a{ color: inherit; text-decoration: none; }
 header{ padding: 24px 0; border-bottom: 1px solid var(--rule); }
 .header-row{ display:flex; align-items:center; justify-content:space-between; }
 .wordmark{ font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
-.wordmark span{ color: var(--amber); }
+.wordmark span{ color: var(--amber); font-size: 0.9rem; }
 nav{ display:flex; gap: 30px; font-size: 0.9rem; }
 nav a{ color: var(--bone-dim); transition: color .15s ease; }
 nav a:hover{ color: var(--bone); }
 
 /* ---------- hero ---------- */
 .hero{ position: relative; padding: 90px 0 70px; overflow:hidden; }
-.hero-bg{ position:absolute; inset:0; z-index:0; opacity: 0.9; }
+.hero-bg{ position:absolute; inset:0; z-index:0; opacity:0.9; }
 .hero-bg svg{ width:100%; height:100%; }
 .hero-content{ position:relative; z-index:1; max-width: 720px; }
+.hero-admin{
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 2;
+  font-size: 0.75rem;
+  color: var(--bone-dim);
+  background: rgba(242,237,227,0.08);
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.hero-admin:hover{
+  color: var(--bone);
+}
 .hero .coord{ margin-bottom: 18px; display:block; }
 .hero h1{
   font-size: clamp(2.8rem, 6vw, 4.6rem);
@@ -184,7 +199,6 @@ nav a:hover{ color: var(--bone); }
 .post-body h2, .post-body h3{ text-transform: uppercase; margin: 40px 0 16px; font-size: 1.3rem; }
 
 /* ---------- photo gallery ---------- */
-
 .post-body img {
   width: 100%;
   height: auto;
